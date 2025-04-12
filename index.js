@@ -1,3 +1,4 @@
+console.log("🧠 index.js loaded and running");
 const express = require("express");
 const axios = require("axios");
 const app = express();
@@ -69,6 +70,6 @@ app.post("/update-stock", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Listening on port ${PORT}`)); // ✅
 
