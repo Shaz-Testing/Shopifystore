@@ -69,4 +69,6 @@ app.post("/update-stock", async (req, res) => {
     res.status(500).send("Error updating stock status");
   }
 });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Listening on port ${PORT}`));
 
