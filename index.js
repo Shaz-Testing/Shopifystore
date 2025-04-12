@@ -3,8 +3,8 @@ const axios = require("axios");
 const app = express();
 app.use(express.json());
 
-const SHOP = "your-store.myshopify.com"; // Replace with your store
-const TOKEN = "shpat_xxxxx"; // Replace with your Admin API token
+const SHOP = "eve-furniture-4502.myshopify.com"; // Replace with your store
+const TOKEN = process.env.SHOPIFY_ADMIN_TOKEN;
 
 app.post("/update-stock", async (req, res) => {
   const inventoryItemId = req.body?.inventory_item_id;
