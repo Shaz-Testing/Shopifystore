@@ -69,11 +69,10 @@ app.post("/update-stock", async (req, res) => {
     res.status(500).send("Error updating stock status");
   }
 });
-const PORT = process.env.PORT || 3000;
-app.all("*", (req, res) => {
-  console.log("🚨 Caught unknown route:", req.method, req.url);
-  res.status(404).send("This route does not exist.");
-});
 
-app.listen(PORT, () => console.log(`🚀 Listening on port ${PORT}`));
+// Use the PORT environment variable provided by Render or default to 3000
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server is listening on port ${PORT}`);
+});
 
