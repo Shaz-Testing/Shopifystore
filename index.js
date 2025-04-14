@@ -70,5 +70,10 @@ app.post("/update-stock", async (req, res) => {
   }
 });
 const PORT = process.env.PORT || 3000;
+app.all("*", (req, res) => {
+  console.log("🚨 Caught unknown route:", req.method, req.url);
+  res.status(404).send("This route does not exist.");
+});
+
 app.listen(PORT, () => console.log(`🚀 Listening on port ${PORT}`));
 
